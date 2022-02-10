@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Layout from "./components/themeplate/Layout";
 import NavBar from "./components/organisms/NavBar";
 import Beaner from "./components/organisms/Beaner";
+import Main from "./components/organisms/Main";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <>
           <NavBar></NavBar>
           <Beaner />
+          <Main />
         </>
       </Layout>
     </>
