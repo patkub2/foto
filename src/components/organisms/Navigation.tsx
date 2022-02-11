@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import glass from "../../images/icons/glass.svg";
 import heart from "../../images/icons/heart.svg";
