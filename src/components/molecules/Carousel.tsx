@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState, useEffect, Fragment } from "react";
+import axios from "axios";
 import {
   CarouselProvider,
   Slider,
@@ -8,6 +10,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import girl from "../../images/photoGirl.png";
+import CarouselElement from "./../atoms/CarouselElement";
 const Container = styled.div`
   //border: 2px solid pink; /* BORDER TEST*/
   width: 100%;
@@ -18,15 +21,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Img = styled.img`
-  font-family: "Panchang", sans-serif;
-  font-size: 32px;
-
-  width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.verylight}; /* BORDER TEST*/
-  z-index: 2;
-  padding: 10px;
-`;
 const StyledCarouselProvider = styled(CarouselProvider)`
   //border: 1px solid blue; /* BORDER TEST*/
 
@@ -41,12 +35,34 @@ const StyledSlider = styled(Slider)`
 `;
 
 type Props = {};
+interface User {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
 
 const Carousel = (props: Props) => {
+  const [data, setData] = useState<User[]>([]);
+  useEffect(() => {
+    axios
+      .get<User[]>("https://fakestoreapi.com/products?limit=5")
+      .then((response) => {
+        setData(response.data);
+        console.log(data[1].image);
+      });
+  }, []);
+
   return (
     <Container>
       <StyledCarouselProvider
-        visibleSlides={2.5}
+        visibleSlides={3}
         totalSlides={5}
         step={3}
         naturalSlideWidth={400}
@@ -54,25 +70,15 @@ const Carousel = (props: Props) => {
         infinite
       >
         <StyledSlider>
-          <Slide index={0}>
-            <Img src={girl}></Img>
-          </Slide>
-          <Slide index={1}>
-            <Img src={girl}></Img>
-          </Slide>
-          <Slide index={2}>
-            <Img src={girl}></Img>
-          </Slide>
-          <Slide index={3}>
-            <Img src={girl}></Img>
-          </Slide>
-          <Slide index={4}>
-            <Img src={girl}></Img>
-          </Slide>
+          {data.map((item) => (
+            <Slide index={item.id}>
+              <CarouselElement image={item.image} />
+            </Slide>
+          ))}
         </StyledSlider>
       </StyledCarouselProvider>
     </Container>
   );
 };
-
+// <button onClick={() => console.log(FetchAPI)}>test</button>
 export default Carousel;
