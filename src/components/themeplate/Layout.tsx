@@ -17,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
 const StyledWraper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.dark};
-  height: 100vh;
-  width: 100vw;
 `;
 type Props = {
   children: JSX.Element;

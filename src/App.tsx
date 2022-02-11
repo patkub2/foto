@@ -5,6 +5,7 @@ import Main from "./components/organisms/Main";
 import Navigation from "./components/organisms/Navigation";
 import styled from "styled-components";
 import LastSeen from "./components/organisms/LastSeen";
+import Products from "./components/organisms/Products";
 
 const Space = styled.div`
   height: 100vh;
@@ -20,6 +21,8 @@ function App() {
           <Beaner />
           <Main />
           <LastSeen />
+          <Products />
+
           <Space />
         </>
       </Layout>
