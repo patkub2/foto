@@ -68,7 +68,7 @@ const Heart = styled.img`
 
   height: 24px;
   width: 24px;
-  z-index: 4;
+  z-index: 1;
 `;
 const Name = styled.div`
   position: relative;

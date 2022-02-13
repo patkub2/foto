@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import subtractline from "../../images/icons/subtractline.svg";
 import mail from "../../images/icons/mail.svg";
-import ProductThemplate from "../atoms/ProductThemplate";
-import MenuProducts from "./../molecules/MenuProducts";
-import ProductsContainer from "./../molecules/ProductsContainer";
 
 type ColorText = {
   isBig?: boolean;
@@ -108,7 +105,7 @@ const H3 = styled.div`
 `;
 type Props = {};
 
-const Information = (props: Props) => {
+const Contact = (props: Props) => {
   return (
     <Container>
       <InfoLinkTitle>
@@ -158,4 +155,4 @@ const Information = (props: Props) => {
   );
 };
 
-export default Information;
+export default Contact;

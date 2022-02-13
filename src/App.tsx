@@ -6,7 +6,8 @@ import Navigation from "./components/organisms/Navigation";
 import styled from "styled-components";
 import LastSeen from "./components/organisms/LastSeen";
 import Products from "./components/organisms/Products";
-import Information from "./components/organisms/Information";
+import Contact from "./components/organisms/Contact";
+import Footer from "./components/organisms/Footer";
 
 const Space = styled.div`
   height: 100vh;
@@ -23,7 +24,8 @@ function App() {
           <Main />
           <LastSeen />
           <Products />
-          <Information />
+          <Contact />
+          <Footer />
           <Space />
         </>
       </Layout>

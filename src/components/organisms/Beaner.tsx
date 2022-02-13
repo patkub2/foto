@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import Girl from "./../molecules/Girl";
-
+import { useMediaQuery } from "react-responsive";
 const FrameContainer = styled.div`
   position: absolute;
   // border: 1px solid green; /* BORDER TEST*/
@@ -35,6 +34,8 @@ const Container = styled.div`
 type Props = {};
 
 const Beaner = (props: Props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1920px)" });
+
   return (
     <Container>
       <FrameContainer>
