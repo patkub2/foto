@@ -55,7 +55,7 @@ const Button = styled.button`
 type Props = {};
 
 const Main = (props: Props) => {
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1900px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1500px)" });
   return (
     <Container>
       <H1>Nowa kolekcja</H1>

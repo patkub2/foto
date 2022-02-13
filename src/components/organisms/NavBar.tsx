@@ -34,7 +34,7 @@ const Container = styled.div`
 const Cont = styled.div`
   //border: 1px solid blue; /* BORDER TEST*/
   width: 100%;
-  max-width: 1500px;
+  //max-width: 1500px;
   justify-content: space-evenly;
   display: flex;
   align-items: baseline;
@@ -42,6 +42,7 @@ const Cont = styled.div`
     //border: 1px solid red; /* BORDER TEST*/
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0 200px;
   }
 `;
 const Hr = styled.hr`
