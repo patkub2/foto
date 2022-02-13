@@ -1,24 +1,34 @@
 import styled from "styled-components";
 import frame from "../../images/Frame.png";
+import { useMediaQuery } from "react-responsive";
 const Container = styled.div`
   font-family: "Clash Grotesk", sans-serif;
   //border: 1px solid blue; /* BORDER TEST*/
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: "transparent";
   color: ${({ theme }) => theme.colors.dark};
   margin: 20px 30px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  ${({ theme }) => theme.media.desktop} {
+    width: 40%;
+  }
 `;
 const H1 = styled.div`
   font-size: 14px;
   line-height: 1.6;
+  ${({ theme }) => theme.media.desktop} {
+    font-size: 24px;
+  }
 `;
 const H2 = styled.div`
   font-size: 32px;
   font-weight: 600;
   line-height: 1.3;
+  ${({ theme }) => theme.media.desktop} {
+    font-size: 48px;
+  }
 `;
 const H3 = styled.div`
   font-size: 14px;
@@ -36,11 +46,16 @@ const Button = styled.button`
   align-items: flex-end;
   padding: 10px;
   margin: 20px 0;
+  ${({ theme }) => theme.media.desktop} {
+    min-width: 250px;
+    width: 40%;
+  }
 `;
 
 type Props = {};
 
 const Main = (props: Props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1900px)" });
   return (
     <Container>
       <H1>Nowa kolekcja</H1>

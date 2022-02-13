@@ -9,6 +9,10 @@ const Img = styled.img`
   height: 250px;
   //border: 1px solid red; /* BORDER TEST*/
   z-index: 2;
+  ${({ theme }) => theme.media.desktop} {
+    //border: 1px solid red; /* BORDER TEST*/
+    height: 100%;
+  }
 `;
 const Girl = (props: Props) => {
   return <Img src={girl}></Img>;
