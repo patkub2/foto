@@ -44,7 +44,7 @@ const InfoLink = styled.div`
 const ColorText = styled.div<ColorText>`
   font-size: ${({ isBig }) => (isBig ? "40px" : "14px")};
   font-weight: 700;
-  //padding: 15px 0px;
+  // padding: 15px 0px;
   display: flex;
   width: 100%;
   justify-content: flex-start;

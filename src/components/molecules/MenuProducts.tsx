@@ -18,7 +18,7 @@ const Button = styled.div`
   justify-content: center;
   align-items: flex-end;
 `;
-const Space = styled.hr`
+const Hr = styled.hr`
   width: 20vw;
 `;
 type Props = {};
@@ -26,12 +26,12 @@ type Props = {};
 const MenuProducts = (props: Props) => {
   return (
     <Menu>
-      <Space />
+      <Hr />
       <Button>
         Polecane <img src={arrow}></img>
       </Button>
 
-      <Space />
+      <Hr />
     </Menu>
   );
 };

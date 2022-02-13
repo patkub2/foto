@@ -1,5 +1,4 @@
 import { DefaultTheme } from "styled-components";
-
 export const theme: DefaultTheme = {
   colors: {
     verylight: "#DEDEDE",
@@ -13,5 +12,8 @@ export const theme: DefaultTheme = {
     fontWeightLight: "500",
     fontWeightMedium: "600",
     fontWeightBold: "700",
+  },
+  media: {
+    desktop: "@media only screen and (min-width: 1500px)",
   },
 };
