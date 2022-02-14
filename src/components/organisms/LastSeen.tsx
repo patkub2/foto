@@ -11,11 +11,24 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  ${({ theme }) => theme.media.desktop} {
+    //border: 1px solid red; /* BORDER TEST*/
+    flex-direction: row;
+    align-items: center;
+    margin: 0 200px;
+  }
 `;
 const H1 = styled.div`
   font-size: 14px;
   font-weight: 600;
   margin: 20px 0;
+  ${({ theme }) => theme.media.desktop} {
+    // border: 1px solid red; /* BORDER TEST*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+  }
 `;
 
 type Props = {};

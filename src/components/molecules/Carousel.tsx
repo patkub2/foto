@@ -11,6 +11,8 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import girl from "../../images/photoGirl.png";
 import CarouselElement from "./../atoms/CarouselElement";
+
+import { useMediaQuery } from "react-responsive";
 const Container = styled.div`
   //border: 2px solid pink; /* BORDER TEST*/
   width: 100%;
@@ -25,13 +27,24 @@ const StyledCarouselProvider = styled(CarouselProvider)`
   //border: 1px solid blue; /* BORDER TEST*/
 
   width: 100%;
-  height: 100%;
+  //height: 100%;
 `;
 
 const StyledSlider = styled(Slider)`
-  // border: 1px solid green; /* BORDER TEST*/
-  width: 100%;
-  max-height: 100%;
+  //border: 1px solid green; /* BORDER TEST*/
+  max-width: 100%;
+  max-height: 120px;
+`;
+
+const StyledSlide = styled(Slide)`
+  //border: 1px solid green; /* BORDER TEST*/
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+`;
+const StyledCarouselElement = styled(CarouselElement)`
+  //border: 1px solid green; /* BORDER TEST*/
 `;
 
 type Props = {};
@@ -49,10 +62,11 @@ interface User {
 }
 
 const Carousel = (props: Props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1500px)" });
   const [data, setData] = useState<User[]>([]);
   useEffect(() => {
     axios
-      .get<User[]>("https://fakestoreapi.com/products?limit=5")
+      .get<User[]>("https://fakestoreapi.com/products?limit=10")
       .then((response) => {
         setData(response.data);
         console.log(data[1].image);
@@ -62,8 +76,8 @@ const Carousel = (props: Props) => {
   return (
     <Container>
       <StyledCarouselProvider
-        visibleSlides={3}
-        totalSlides={5}
+        visibleSlides={isBigScreen ? 10 : 3}
+        totalSlides={10}
         step={3}
         naturalSlideWidth={400}
         naturalSlideHeight={500}
@@ -71,9 +85,9 @@ const Carousel = (props: Props) => {
       >
         <StyledSlider>
           {data.map((item) => (
-            <Slide index={item.id}>
-              <CarouselElement image={item.image} />
-            </Slide>
+            <StyledSlide index={item.id}>
+              <StyledCarouselElement image={item.image} />
+            </StyledSlide>
           ))}
         </StyledSlider>
       </StyledCarouselProvider>
