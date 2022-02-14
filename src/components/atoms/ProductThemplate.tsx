@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import heart from "../../images/icons/heart.svg";
 import heartfull from "../../images/icons/heartfull.svg";
+
+import { useMediaQuery } from "react-responsive";
 const Container = styled.div`
   //border: 1px solid blue; /* BORDER TEST*/
   width: 150px;
@@ -10,6 +12,9 @@ const Container = styled.div`
   //flex-direction: column;
   flex-wrap: wrap;
   margin: 10px 0;
+  ${({ theme }) => theme.media.desktop} {
+    width: 22%;
+  }
 `;
 const Photo = styled.div`
   //border: 1px solid blue; /* BORDER TEST*/
@@ -18,6 +23,10 @@ const Photo = styled.div`
   margin-bottom: 10px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.light};
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: 300px;
+  }
 `;
 const ImageContainer = styled.div`
   //border: 1px solid red; /* BORDER TEST*/
@@ -59,6 +68,10 @@ const Promotion = styled.div`
   right: 0px;
   background-color: ${({ theme }) => theme.colors.red};
   color: ${({ theme }) => theme.colors.light};
+  ${({ theme }) => theme.media.desktop} {
+    top: 0px;
+    bottom: auto;
+  }
 `;
 const Heart = styled.img`
   position: absolute;
@@ -135,6 +148,7 @@ type Props = {
 };
 
 const ProductThemplate = (props: Props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1500px)" });
   const MAX_LENGTH = 10;
   return (
     <Container>

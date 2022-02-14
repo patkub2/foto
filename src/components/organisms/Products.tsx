@@ -10,6 +10,9 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  ${({ theme }) => theme.media.desktop} {
+    margin: 0 200px;
+  }
 `;
 
 const CheckMoreButton = styled.div`
@@ -23,6 +26,11 @@ const CheckMoreButton = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => theme.media.desktop} {
+    width: 20%;
+
+    margin: 30px 0;
+  }
 `;
 type Props = {};
 
