@@ -1,6 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import internal from "stream";
 
 type Props = {};
 interface User {
@@ -16,18 +15,18 @@ interface User {
   };
 }
 
-const FetchAPI = (props: Props) => {
-  const [data, setData] = useState<User[]>([]);
+const useFetchAPI = (props: Props) => {
+  const [dataApi, setData] = useState<User[]>([]);
   useEffect(() => {
     axios
-      .get<User[]>("https://fakestoreapi.com/products?limit=5")
+      .get<User[]>("https://fakestoreapi.com/products?limit=20")
       .then((response) => {
         setData(response.data);
-        console.log(data);
+        console.log(dataApi);
       });
   }, []);
 
-  return { data };
+  return { dataApi };
 };
 
-export default FetchAPI;
+export default useFetchAPI;

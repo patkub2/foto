@@ -148,7 +148,6 @@ type Props = {
 };
 
 const ProductThemplate = (props: Props) => {
-  const isBigScreen = useMediaQuery({ query: "(min-width: 1500px)" });
   const MAX_LENGTH = 10;
   return (
     <Container>

@@ -1,37 +1,11 @@
-import styled from "styled-components";
-import arrow from "../../images/icons/arrowdown.svg";
 import ProductThemplate from "../atoms/ProductThemplate";
-import { useState, useEffect, Fragment } from "react";
-import axios from "axios";
+import useFetchAPI from "./../atoms/useFetchAPI";
 
-type Props = {};
-interface User {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-const ProductsContainer = (props: Props) => {
-  const [data, setData] = useState<User[]>([]);
-  useEffect(() => {
-    axios
-      .get<User[]>("https://fakestoreapi.com/products?limit=20")
-      .then((response) => {
-        setData(response.data);
-        console.log(data[1].image);
-      });
-  }, []);
-
+const ProductsContainer = () => {
+  const { dataApi } = useFetchAPI([]);
   return (
     <>
-      {data.map((item) => (
+      {dataApi.map((item) => (
         <ProductThemplate
           key={item.id}
           bestseller
