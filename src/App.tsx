@@ -31,7 +31,6 @@ function App() {
           <Products />
           <Contact />
           <Footer />
-          <Space />
         </>
       </Layout>
     </>
