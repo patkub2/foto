@@ -8,10 +8,10 @@ export const theme: DefaultTheme = {
     red: "#D91847",
     blue: "#3CDDD8",
   },
-  typography: {
-    fontWeightLight: "500",
-    fontWeightMedium: "600",
-    fontWeightBold: "700",
+  weight: {
+    light: "500",
+    medium: "600",
+    bold: "700",
   },
   media: {
     desktop: "@media only screen and (min-width: 1500px)",
