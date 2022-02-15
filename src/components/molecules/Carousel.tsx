@@ -84,7 +84,7 @@ const Carousel = (props: Props) => {
       >
         <StyledSlider>
           {data.map((item) => (
-            <StyledSlide index={item.id}>
+            <StyledSlide index={item.id} key={item.id}>
               <StyledCarouselElement image={item.image} />
             </StyledSlide>
           ))}

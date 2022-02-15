@@ -33,6 +33,7 @@ const ProductsContainer = (props: Props) => {
     <>
       {data.map((item) => (
         <ProductThemplate
+          key={item.id}
           bestseller
           like
           image={item.image}
