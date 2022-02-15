@@ -2,11 +2,9 @@ import styled from "styled-components";
 import mercelogo from "../../images/icons/mercelogo.svg";
 const Container = styled.div`
   font-family: "Clash Grotesk", sans-serif;
-  //border: 1px solid blue; /* BORDER TEST*/
   background-color: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.dark};
   margin: 20px 30px;
-  //max-width: 300px;
 
   margin-bottom: 100px;
   ${({ theme }) => theme.media.desktop} {

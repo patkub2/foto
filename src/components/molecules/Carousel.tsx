@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect, Fragment } from "react";
-import axios from "axios";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import CarouselElement from "./../atoms/CarouselElement";
 

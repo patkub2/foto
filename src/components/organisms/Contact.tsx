@@ -3,9 +3,6 @@ import subtractline from "../../images/icons/subtractline.svg";
 import mail from "../../images/icons/mail.svg";
 import Newsletter from "../atoms/Newsletter";
 
-type ColorText = {
-  isBig?: boolean;
-};
 const Container = styled.div`
   border: 1px solid blue; /* BORDER TEST*/
   margin: 20px 30px;
@@ -64,6 +61,9 @@ const InfoLink = styled.div`
     padding: 10px 0px;
   }
 `;
+type ColorText = {
+  isBig?: boolean;
+};
 const ColorText = styled.div<ColorText>`
   font-size: ${({ isBig }) => (isBig ? "40px" : "14px")};
   font-weight: 700;
@@ -79,9 +79,7 @@ const ColorText = styled.div<ColorText>`
   );
 `;
 
-type Props = {};
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return (
     <Container>
       <InfoContainer>

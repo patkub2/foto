@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import arrow from "../../images/icons/arrowdown.svg";
 import { useMediaQuery } from "react-responsive";
-import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import { useState, useEffect } from "react";
 
 const Menu = styled.div`
   font-size: 20px;
@@ -28,7 +26,10 @@ const Menu = styled.div`
     margin: 30px 0;
   }
 `;
-const Button = styled.div`
+type Text = {
+  grey?: boolean;
+};
+const Button = styled.div<Text>`
   font-size: 20px;
   font-weight: 700;
   //border: 1px solid red; /* BORDER TEST*/
@@ -45,11 +46,8 @@ const Hr = styled.hr`
   width: 20vw;
 `;
 
-const options = ["Polecane", "Promocje", "Nowości"];
-
 const MenuProducts = () => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1500px)" });
-  const [values, setValues] = useState("Polecane");
   return (
     <Menu>
       <Hr />

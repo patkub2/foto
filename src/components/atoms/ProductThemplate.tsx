@@ -2,7 +2,6 @@ import styled from "styled-components";
 import heart from "../../images/icons/heart.svg";
 import heartfull from "../../images/icons/heartfull.svg";
 
-import { useMediaQuery } from "react-responsive";
 const Container = styled.div`
   //border: 1px solid blue; /* BORDER TEST*/
   width: 150px;
